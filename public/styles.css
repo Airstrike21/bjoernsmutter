@@ -1,0 +1,90 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #2f2926;
+  background: linear-gradient(145deg, #fffaf6, #f5ebe5);
+  font-synthesis: none;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+.card {
+  width: min(100%, 560px);
+  background: rgba(255,255,255,.94);
+  border: 1px solid rgba(87,63,51,.12);
+  border-radius: 24px;
+  padding: clamp(22px, 6vw, 42px);
+  box-shadow: 0 20px 65px rgba(76,51,39,.12);
+}
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: .76rem;
+  letter-spacing: .22em;
+  font-weight: 750;
+  color: #956d5a;
+}
+h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 8vw, 3.3rem);
+  line-height: 1.02;
+  font-weight: 500;
+}
+.intro { line-height: 1.6; color: #665b56; margin: 18px 0 28px; }
+form { display: grid; gap: 13px; }
+label { font-weight: 700; font-size: .92rem; }
+label span, small { font-weight: 400; color: #786c66; }
+input {
+  width: 100%;
+  min-height: 50px;
+  padding: 12px 14px;
+  border: 1px solid #d8cbc4;
+  border-radius: 13px;
+  background: #fff;
+  font: inherit;
+}
+input:focus { outline: 3px solid rgba(150,109,90,.18); border-color: #956d5a; }
+.file-picker {
+  margin-top: 7px;
+  min-height: 112px;
+  border: 2px dashed #cdb9af;
+  border-radius: 16px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 18px;
+  background: #fffaf7;
+}
+.file-picker:active { transform: scale(.99); }
+.selection {
+  padding: 11px 13px;
+  border-radius: 12px;
+  background: #f5eee9;
+  font-size: .9rem;
+  line-height: 1.45;
+}
+button {
+  margin-top: 7px;
+  min-height: 54px;
+  border: 0;
+  border-radius: 14px;
+  background: #5f4337;
+  color: #fff;
+  font: inherit;
+  font-weight: 750;
+  cursor: pointer;
+}
+button:disabled { opacity: .45; cursor: not-allowed; }
+#progressArea { margin-top: 22px; }
+.progress-header { display:flex; justify-content:space-between; gap:10px; font-size:.9rem; }
+progress { width:100%; height:14px; margin-top:9px; accent-color:#6f4d3e; }
+.message { margin-top:18px; padding:14px; border-radius:12px; line-height:1.45; }
+.message.success { background:#e8f5eb; color:#24522c; }
+.message.error { background:#fdeceb; color:#7b2925; }
+.privacy { margin:24px 0 0; font-size:.76rem; color:#7b716c; line-height:1.5; }
