@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Admin · Hochzeitsbilder</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/admin/admin.css">
+  <script src="/admin/admin.js" defer></script>
+</head>
+<body>
+<main class="admin-shell">
+  <header class="admin-header">
+    <div><p class="eyebrow">ADMINBEREICH</p><h1>Hochzeitsbilder verwalten</h1></div>
+    <a href="/galerie/" class="secondary-link">Galerie öffnen</a>
+  </header>
+
+  <section id="loginCard" class="panel login-panel">
+    <h2>Anmelden</h2><p>Dieses Passwort gilt nur für den Adminbereich.</p>
+    <form id="loginForm"><input id="adminPassword" type="password" placeholder="Admin-Passwort" autocomplete="current-password" required><button type="submit">Adminbereich öffnen</button></form>
+    <div id="loginMessage" class="message error" hidden></div>
+  </section>
+
+  <section id="adminArea" hidden>
+    <div class="toolbar panel">
+      <div><strong id="countText">0 Bilder</strong><span id="storageText"></span></div>
+      <div class="toolbar-actions"><button id="refreshButton" class="secondary-button" type="button">Aktualisieren</button><button id="logoutButton" class="secondary-button" type="button">Abmelden</button></div>
+    </div>
+
+    <div class="tabs"><button class="tab active" data-filter="uploads">Nicht freigegeben</button><button class="tab" data-filter="approved">Galerie</button><button class="tab" data-filter="all">Alle</button></div>
+
+    <div class="selection-toolbar panel">
+      <div><strong id="selectionText">0 ausgewählt</strong></div>
+      <div class="selection-actions">
+        <button id="selectAllButton" class="secondary-button" type="button">Alle sichtbaren auswählen</button>
+        <button id="clearSelectionButton" class="secondary-button" type="button">Auswahl aufheben</button>
+        <button id="approveSelectedButton" type="button">Auswahl freigeben</button>
+        <button id="unapproveSelectedButton" class="secondary-button" type="button">Aus Galerie entfernen</button>
+        <button id="downloadSelectedButton" class="secondary-button" type="button">Auswahl als ZIP</button>
+        <button id="deleteSelectedButton" class="danger-button" type="button">Auswahl löschen</button>
+      </div>
+    </div>
+
+    <div class="download-all panel">
+      <strong>Komplett-Download</strong>
+      <div class="selection-actions">
+        <button id="downloadVisibleAllButton" class="secondary-button" type="button">Diesen Bereich als ZIP</button>
+        <button id="downloadEverythingButton" class="secondary-button" type="button">Alle Bilder als ZIP</button>
+      </div>
+    </div>
+
+    <div id="adminMessage" class="message" hidden></div>
+    <section id="grid" class="photo-grid"></section>
+    <p id="emptyState" class="empty-state" hidden>Hier sind noch keine Bilder.</p>
+  </section>
+</main>
+<dialog id="viewer"><button id="closeViewer" class="dialog-close" aria-label="Schließen">×</button><img id="viewerImage" alt=""><div class="dialog-meta"><strong id="viewerName"></strong><span id="viewerGuest"></span></div></dialog>
+</body>
+</html>
