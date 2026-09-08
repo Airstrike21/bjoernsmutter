@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Galerie · Hochzeitsbilder</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/galerie/galerie.css">
+  <script src="/galerie/galerie.js" defer></script>
+</head>
+<body>
+<main class="gallery-shell">
+  <header class="gallery-header"><p class="eyebrow">UNSERE HOCHZEIT</p><h1>Die schönsten Momente</h1><p>Eine Auswahl der Bilder, die mit uns geteilt wurden.</p><a href="/" class="upload-link">Eigene Bilder hochladen</a></header>
+
+  <section class="gallery-tools">
+    <div class="gallery-filters" aria-label="Bildformat filtern">
+      <button class="gallery-filter active" data-orientation="all" type="button">Alle</button>
+      <button class="gallery-filter" data-orientation="landscape" type="button">Querformat</button>
+      <button class="gallery-filter" data-orientation="portrait" type="button">Hochkant</button>
+    </div>
+    <div class="gallery-selection-actions">
+      <button id="selectVisibleButton" class="gallery-action" type="button">Alle sichtbaren auswählen</button>
+      <button id="clearGallerySelectionButton" class="gallery-action" type="button">Auswahl aufheben</button>
+      <button id="downloadGallerySelectionButton" class="gallery-action primary" type="button">Auswahl als ZIP</button>
+      <button id="downloadAllGalleryButton" class="gallery-action primary" type="button">Alle Bilder herunterladen</button>
+    </div>
+    <strong id="gallerySelectionText">0 ausgewählt</strong>
+  </section>
+
+  <p id="galleryMessage" class="message error" hidden></p>
+  <section id="galleryGrid" class="gallery-grid"></section>
+  <p id="galleryEmpty" class="empty-state" hidden>Noch wurden keine Bilder für die Galerie freigegeben.</p>
+</main>
+<dialog id="galleryViewer"><button id="galleryClose" class="dialog-close" aria-label="Schließen">×</button><img id="galleryViewerImage" alt=""></dialog>
+</body>
+</html>
